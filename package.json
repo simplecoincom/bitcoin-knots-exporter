@@ -27,7 +27,7 @@
   "author": "WesleyCharlesBlake",
   "license": "MIT",
   "dependencies": {
-    "bitcoin-knots-client": "^2.2.9",
+    "bitcoind-client": "^2.2.9",
     "compression": "^1.7.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
