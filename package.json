@@ -1,0 +1,39 @@
+{
+  "name": "bitcoin-knots-exporter",
+  "version": "2.5.4",
+  "description": "bitcoin-knots metrics prometheus exporter",
+  "main": "index.js",
+  "scripts": {
+    "test": "dgoss run simplecoin/bitcoin-knots-exporter",
+    "start": "node -r dotenv/config index.js",
+    "build": "docker build -t simplecoin/bitcoin-knots-exporter .",
+    "push": "docker push simplecoin/bitcoin-knots-exporter",
+    "publish": "npm run build && npm run test && npm run push",
+    "demo": "docker-compose up"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplecoincom/bitcoin-knots-exporter.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "bitcoin-knots",
+    "monitoring",
+    "prometheus",
+    "wallet",
+    "metrics",
+    "exporter"
+  ],
+  "author": "WesleyCharlesBlake",
+  "license": "MIT",
+  "dependencies": {
+    "bitcoin-knots-client": "^2.2.9",
+    "compression": "^1.7.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "helmet": "^3.12.0",
+    "isomorphic-fetch": "^2.2.1",
+    "prom-client": "^10.2.3",
+    "serve-static": "^1.13.2"
+  }
+}

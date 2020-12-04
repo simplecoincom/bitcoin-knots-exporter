@@ -1,0 +1,18 @@
+version: '2'
+services:
+  bitcoin-knots:
+    image: simplecoin/bitcoin-knots:0.19.1
+    command: [
+      "-testnet",
+      "-rpcallowip=::/0",
+      "-rpcuser=test",
+      "-rpcpassword=test",
+    ]
+    environment:
+      - DISABLEWALLET=0
+  exporter:
+    build: .
+    ports:
+      - "9439:9439"
+    links:
+      - bitcoin-knots
